@@ -27,6 +27,7 @@ body #start-screen-wrapper small {
   display: none;
   margin: 0 auto;
   width: 120px;
+  color: #04288e;
 }
 body #menu-wrapper {
   display: none;
@@ -64,7 +65,7 @@ body #menu-wrapper ul li {
   background: -o-linear-gradient(top, #ffffff 0%, #000000 15%, #000000 85%, #ffffff 100%);
   background: -ms-linear-gradient(top, #ffffff 0%, #000000 15%, #000000 85%, #ffffff 100%);
   background: linear-gradient(to bottom, #ffffff 0%, #000000 15%, #000000 85%, #ffffff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@col1', endColorstr='@col1', GradientType=0);
   border: 3px outset #2d36d1;
   border-radius: 8px;
   display: inline-block;
@@ -72,6 +73,77 @@ body #menu-wrapper ul li {
   width: 100px;
   margin-right: 5px;
 }
+body #menu-wrapper ul li:hover {
+  background: #ffffff;
+  background: -moz-linear-gradient(top, #ffffff 0%, #000000 30%, #000000 70%, #ffffff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(30%, #000000), color-stop(70%, #000000), color-stop(100%, #ffffff));
+  background: -webkit-linear-gradient(top, #ffffff 0%, #000000 30%, #000000 70%, #ffffff 100%);
+  background: -o-linear-gradient(top, #ffffff 0%, #000000 30%, #000000 70%, #ffffff 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%, #000000 30%, #000000 70%, #ffffff 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #000000 30%, #000000 70%, #ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@col1', endColorstr='@col1', GradientType=0);
+}
+body #menu-wrapper ul li:hover > a {
+  color: #0ff;
+}
 body #menu-wrapper ul li .li-item-content {
   display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 25px 0;
+  overflow: auto;
+}
+body #menu-wrapper ul li .li-item-content img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: auto;
+  border-radius: 20%;
+  border: 2px outset #888;
+}
+body #menu-wrapper ul li .li-item-content #authors-wrapper {
+  width: 800px;
+  margin: auto;
+  height: 75%;
+  overflow: auto;
+}
+body #menu-wrapper ul li .li-item-content #authors-wrapper .col {
+  display: inline-block;
+  margin: auto;
+}
+body #menu-wrapper ul li .li-item-content #authors-wrapper .col:first-of-type {
+  float: left;
+}
+body #menu-wrapper ul li .li-item-content #authors-wrapper .col:last-of-type {
+  float: right;
+}
+body #menu-wrapper ul li .li-item-content .dt {
+  display: inline-block;
+  text-align: center;
+  border: 2px outset #808080;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 4px 15px;
+  padding-top: 10px;
+  width: 120px;
+  height: 130px;
+  margin-bottom: 5px;
+}
+body #menu-wrapper ul li .li-item-content .dt span {
+  display: block;
+  margin-top: 5px;
+}
+body #menu-wrapper ul li .li-item-content .dd {
+  display: table-cell;
+  float: right;
+  border: 2px outset #808080;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 130px;
+  width: 210px;
+  padding: 7px;
+  overflow: auto;
+  vertical-align: middle;
 }

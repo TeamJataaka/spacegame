@@ -19,15 +19,15 @@ body {
         background-attachment: fixed;
     }
 
-    .horizontal-doublecolor-gradient() {
-        background: #ffffff;
-        background: -moz-linear-gradient(top, #ffffff 0%, #000000 15%, #000000 85%, #ffffff 100%);
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(15%,#000000), color-stop(85%,#000000), color-stop(100%,#ffffff));
-        background: -webkit-linear-gradient(top, #ffffff 0%,#000000 15%,#000000 85%,#ffffff 100%);
-        background: -o-linear-gradient(top, #ffffff 0%,#000000 15%,#000000 85%,#ffffff 100%);
-        background: -ms-linear-gradient(top, #ffffff 0%,#000000 15%,#000000 85%,#ffffff 100%);
-        background: linear-gradient(to bottom, #ffffff 0%,#000000 15%,#000000 85%,#ffffff 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+    .horizontal-doublecolor-gradient(@col1: #fff, @col2: #000, @pos1: 15%, @pos2: 85%) {
+        background: @col1;
+        background: -moz-linear-gradient(top, @col1 0%, @col2 @pos1, @col2 @pos2, @col1 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@col1), color-stop(@pos1,@col2), color-stop(@pos2,@col2), color-stop(100%,@col1));
+        background: -webkit-linear-gradient(top, @col1 0%,@col2 @pos1,@col2 @pos2,@col1 100%);
+        background: -o-linear-gradient(top, @col1 0%,@col2 @pos1,@col2 @pos2,@col1 100%);
+        background: -ms-linear-gradient(top, @col1 0%,@col2 @pos1,@col2 @pos2,@col1 100%);
+        background: linear-gradient(to bottom, @col1 0%,@col2 @pos1,@col2 @pos2,@col1 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@col1', endColorstr='@col1',GradientType=0 );
     }
 
     .diag-gradient(#000, #fff, 80%, 100%);
@@ -47,6 +47,7 @@ body {
             display: none;
             margin: 0 auto;
             width: 120px;
+            color: #04288e;
         }
     }
 
@@ -89,8 +90,85 @@ body {
                 width: 100px;
                 margin-right: 5px;
 
+                &:hover {
+                    .horizontal-doublecolor-gradient(#fff, #000, 30%, 70%);
+
+                    & > a {
+                        color: #0ff;
+                    }
+                }
+
                 .li-item-content {
                     display: none;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    position: absolute;
+                    top: 50px;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    padding: 25px 0;
+                    overflow: auto;
+
+                    * {
+                    }
+
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        display: block;
+                        margin: auto;
+                        border-radius: 20%;
+                        border: 2px outset #888;
+                    }
+
+                    #authors-wrapper {
+                        width: 800px;
+                        margin: auto;
+                        height: 75%;
+                        overflow: auto;
+
+                        .col {
+                            display: inline-block;
+                            margin: auto;
+
+                            &:first-of-type {
+                                float: left;
+                            }
+
+                            &:last-of-type {
+                                float: right;
+                            }
+                        }
+                    }
+
+                    .dt {
+                        display: inline-block;
+                        text-align: center;
+                        border: 2px outset #808080;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 4px 15px;
+                        padding-top: 10px;
+                        width: 120px;
+                        height: 130px;
+                        margin-bottom: 5px;
+
+                        span {
+                            display: block;
+                            margin-top: 5px;
+                        }
+                    }
+
+                    .dd {
+                        display: table-cell;
+                        float: right;
+                        border: 2px outset #808080;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        height: 130px;
+                        width: 210px;
+                        padding: 7px;
+                        overflow: auto;
+                        vertical-align: middle;
+                    }
                 }
             }
         }
