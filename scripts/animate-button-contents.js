@@ -10,7 +10,6 @@
 
         allContentItems.not(contentToDisplay).slideUp(500);
 
-        //adjustLeftMarginOfAuthorsWrapper()
         contentToDisplay.toggle(1000);
     });
 })()

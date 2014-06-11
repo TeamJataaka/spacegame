@@ -4,12 +4,12 @@
 }
 body {
   background: #000000;
-  background: -moz-linear-gradient(-45deg, #000000 80%, #ffffff 100%);
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(80%, #000000), color-stop(100%, #ffffff));
-  background: -webkit-linear-gradient(-45deg, #000000 80%, #ffffff 100%);
-  background: -o-linear-gradient(-45deg, #000000 80%, #ffffff 100%);
-  background: -ms-linear-gradient(-45deg, #000000 80%, #ffffff 100%);
-  background: linear-gradient(135deg, #000000 80%, #ffffff 100%);
+  background: -moz-linear-gradient(-45deg, #000000 86%, #ffffff 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(86%, #000000), color-stop(100%, #ffffff));
+  background: -webkit-linear-gradient(-45deg, #000000 86%, #ffffff 100%);
+  background: -o-linear-gradient(-45deg, #000000 86%, #ffffff 100%);
+  background: -ms-linear-gradient(-45deg, #000000 86%, #ffffff 100%);
+  background: linear-gradient(135deg, #000000 86%, #ffffff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@col1', endColorstr='@col2', GradientType=1);
   background-attachment: fixed;
   color: #ffffff;
@@ -35,16 +35,14 @@ body #menu-wrapper {
   padding: 15px;
   background: none;
   position: relative;
-  height: 100%;
-  width: 100%;
 }
 body #menu-wrapper #bckgrnd {
-  width: 100%;
+  position: fixed;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  width: 100%;
   z-index: -1;
+  left: 0;
+  top: 0;
 }
 body #menu-wrapper a {
   color: #ffffff;
@@ -52,12 +50,21 @@ body #menu-wrapper a {
   display: block;
   text-align: center;
 }
-body #menu-wrapper ul {
-  list-style-type: none;
+body #menu-wrapper #controls-wrapper {
   margin: 0 auto;
-  width: 350px;
+  width: 385px;
 }
-body #menu-wrapper ul li {
+body #menu-wrapper #controls-wrapper #soundToggle {
+  width: 25px;
+  height: 25px;
+  float: right;
+  margin-left: 5px;
+}
+body #menu-wrapper #controls-wrapper ul {
+  list-style-type: none;
+  display: inline-block;
+}
+body #menu-wrapper #controls-wrapper ul li {
   background: #ffffff;
   background: -moz-linear-gradient(top, #ffffff 0%, #000000 15%, #000000 85%, #ffffff 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(15%, #000000), color-stop(85%, #000000), color-stop(100%, #ffffff));
@@ -73,7 +80,7 @@ body #menu-wrapper ul li {
   width: 100px;
   margin-right: 5px;
 }
-body #menu-wrapper ul li:hover {
+body #menu-wrapper #controls-wrapper ul li:hover {
   background: #ffffff;
   background: -moz-linear-gradient(top, #ffffff 0%, #000000 30%, #000000 70%, #ffffff 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(30%, #000000), color-stop(70%, #000000), color-stop(100%, #ffffff));
@@ -83,10 +90,10 @@ body #menu-wrapper ul li:hover {
   background: linear-gradient(to bottom, #ffffff 0%, #000000 30%, #000000 70%, #ffffff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@col1', endColorstr='@col1', GradientType=0);
 }
-body #menu-wrapper ul li:hover > a {
+body #menu-wrapper #controls-wrapper ul li:hover > a {
   color: #0ff;
 }
-body #menu-wrapper ul li .li-item-content {
+body #menu-wrapper #controls-wrapper ul li .li-item-content {
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -96,7 +103,7 @@ body #menu-wrapper ul li .li-item-content {
   width: 100%;
   padding: 25px 0;
 }
-body #menu-wrapper ul li .li-item-content img {
+body #menu-wrapper #controls-wrapper ul li .li-item-content img {
   width: 100px;
   height: 100px;
   display: block;
@@ -104,23 +111,44 @@ body #menu-wrapper ul li .li-item-content img {
   border-radius: 20%;
   border: 2px outset #888;
 }
-body #menu-wrapper ul li .li-item-content #authors-wrapper {
+body #menu-wrapper #controls-wrapper ul li .li-item-content #how-to-play-wrapper {
+  margin: 0 auto;
+  border: 1px solid green;
+  width: 80%;
+}
+body #menu-wrapper #controls-wrapper ul li .li-item-content #how-to-play-wrapper table {
+  border: 1px solid red;
+  width: 100%;
+  width: 400px;
+  margin: 0 auto;
+}
+body #menu-wrapper #controls-wrapper ul li .li-item-content #how-to-play-wrapper table th {
+  text-align: center;
+  border: 1px solid red;
+}
+body #menu-wrapper #controls-wrapper ul li .li-item-content #how-to-play-wrapper table td {
+  border: 1px solid red;
+  width: 49.5%;
+  margin: 0 auto;
+  text-align: center;
+}
+body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper {
   width: 800px;
   margin: 65px auto;
   height: 70%;
   overflow: auto;
 }
-body #menu-wrapper ul li .li-item-content #authors-wrapper .col {
+body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper .col {
   display: inline-block;
   margin: auto;
 }
-body #menu-wrapper ul li .li-item-content #authors-wrapper .col:first-of-type {
+body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper .col:first-of-type {
   float: left;
 }
-body #menu-wrapper ul li .li-item-content #authors-wrapper .col:last-of-type {
+body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper .col:last-of-type {
   float: right;
 }
-body #menu-wrapper ul li .li-item-content .dt {
+body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper .dt {
   display: inline-block;
   text-align: center;
   border: 2px outset #808080;
@@ -131,11 +159,11 @@ body #menu-wrapper ul li .li-item-content .dt {
   height: 130px;
   margin-bottom: 5px;
 }
-body #menu-wrapper ul li .li-item-content .dt span {
+body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper .dt span {
   display: block;
   margin-top: 5px;
 }
-body #menu-wrapper ul li .li-item-content .dd {
+body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper .dd {
   display: table-cell;
   float: right;
   border: 2px outset #808080;

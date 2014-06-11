@@ -5,6 +5,10 @@
     var small = title.next();
     var win = $(window);
     var menuWrapper = $('#menu-wrapper');
+    var controlsWrapper = $('#controls-wrapper');
+    var menuSound = new Audio('sounds/menu-sound.mp3');
+    menuSound.loop = true;
+    var muteButt;
 
     // comment this out, uncoment whats below
     //menuWrapper.fadeIn(500);
@@ -27,33 +31,48 @@
         var doc = $(document);
 
         doc.on('click', function () {
-            title.fadeOut(2000);
+            menuSound.play();
+            small.fadeOut(1000);
+
             doc.off('click');
             win.off('resize');
 
-            centerMenuWrapper();
-            win.resize(centerMenuWrapper);
-
-            menuWrapper.fadeIn(6500);
-            small.fadeOut(1000);
+            setTimeout(initializeMenu, 1000);
+            createMuteButton();
         });
-    }, 9500)
+    }, 9500) // 9500
 
     function centerMenuWrapper() {
         var winWidth = win.width();
         var winHeight = win.height();
-        menuWrapper.height(winHeight);
-        menuWrapper.width(winWidth);
-        //adjustLeftMarginOfAuthorsWrapper();
+        var ratio = 1; // 0.979;
+        menuWrapper.height(winHeight * ratio);
+        menuWrapper.width(winWidth * ratio);
+    }
+
+    function initializeMenu() {
+        title.fadeOut(2000);
+        centerMenuWrapper();
+        win.resize(centerMenuWrapper);
+        menuWrapper.fadeIn(6500);
+    }
+
+    function createMuteButton() {
+        muteButt = $('<img id="soundToggle" src="imgs/soundOff.png" />');
+        muteButt.on('click', toggleMute);
+        controlsWrapper.append(muteButt);
+    }
+
+    function toggleMute() {
+        menuSound.muted = !menuSound.muted;
+        var soundOnSrc = 'imgs/soundOn.png';
+        var soundOffSrc = 'imgs/soundOff.png';
+        var currSrc = muteButt.attr('src');
+
+        if (currSrc === soundOnSrc) {
+            muteButt.attr('src', 'imgs/soundOff.png');
+        } else {
+            muteButt.attr('src', 'imgs/soundOn.png');
+        }
     }
 })()
-
-//function adjustLeftMarginOfAuthorsWrapper() {
-//    var authorsWrapper = $('#authors-wrapper');
-//    var awParent = authorsWrapper.parent();
-//    var marginLeft = (awParent.width() - authorsWrapper.width()) / 2;
-
-//    if (marginLeft > 0) {
-//        authorsWrapper.css('margin-left', marginLeft * 0.89);
-//    }
-//}

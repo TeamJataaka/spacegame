@@ -30,7 +30,7 @@ body {
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@col1', endColorstr='@col1',GradientType=0 );
     }
 
-    .diag-gradient(#000, #fff, 80%, 100%);
+    .diag-gradient(#000, #fff, 86%, 100%);
     color: @default-font-col;
     overflow: hidden;
 
@@ -57,16 +57,14 @@ body {
         padding: 15px;
         background: none;
         position: relative;
-        height: 100%;
-        width: 100%;
 
         #bckgrnd {
-            width: 100%;
+            position: fixed;
             height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
+            width: 100%;
             z-index: -1;
+            left: 0;
+            top: 0;
         }
 
         a {
@@ -76,97 +74,130 @@ body {
             text-align: center;
         }
 
-        ul {
-            list-style-type: none;
+        #controls-wrapper {
             margin: 0 auto;
-            width: 350px;
+            width: 385px;
 
-            li {
-                .horizontal-doublecolor-gradient();
-                border: 3px outset #2d36d1;
-                border-radius: 8px;
+            #soundToggle {
+                width: 25px;
+                height: 25px;
+                float: right;
+                margin-left: 5px;
+            }
+
+            ul {
+                list-style-type: none;
                 display: inline-block;
-                height: 20px;
-                width: 100px;
-                margin-right: 5px;
 
-                &:hover {
-                    .horizontal-doublecolor-gradient(#fff, #000, 30%, 70%);
+                li {
+                    .horizontal-doublecolor-gradient();
+                    border: 3px outset #2d36d1;
+                    border-radius: 8px;
+                    display: inline-block;
+                    height: 20px;
+                    width: 100px;
+                    margin-right: 5px;
 
-                    & > a {
-                        color: #0ff;
-                    }
-                }
+                    &:hover {
+                        .horizontal-doublecolor-gradient(#fff, #000, 30%, 70%);
 
-                .li-item-content {
-                    display: none;
-                    background-color: rgba(0, 0, 0, 0.5);
-                    position: absolute;
-                    top: 50px;
-                    left: 0;
-                    height: 100%;
-                    width: 100%;
-                    padding: 25px 0;
-
-                    * {
-                    }
-
-                    img {
-                        width: 100px;
-                        height: 100px;
-                        display: block;
-                        margin: auto;
-                        border-radius: 20%;
-                        border: 2px outset #888;
-                    }
-
-                    #authors-wrapper {
-                        width: 800px;
-                        margin: 65px auto;
-                        height: 70%;
-                        overflow: auto;
-
-                        .col {
-                            display: inline-block;
-                            margin: auto;
-
-                            &:first-of-type {
-                                float: left;
-                            }
-
-                            &:last-of-type {
-                                float: right;
-                            }
+                        & > a {
+                            color: #0ff;
                         }
                     }
 
-                    .dt {
-                        display: inline-block;
-                        text-align: center;
-                        border: 2px outset #808080;
+                    .li-item-content {
+                        display: none;
                         background-color: rgba(0, 0, 0, 0.5);
-                        padding: 4px 15px;
-                        padding-top: 10px;
-                        width: 120px;
-                        height: 130px;
-                        margin-bottom: 5px;
+                        position: absolute;
+                        top: 50px;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        padding: 25px 0;
 
-                        span {
+                        img {
+                            width: 100px;
+                            height: 100px;
                             display: block;
-                            margin-top: 5px;
+                            margin: auto;
+                            border-radius: 20%;
+                            border: 2px outset #888;
                         }
-                    }
 
-                    .dd {
-                        display: table-cell;
-                        float: right;
-                        border: 2px outset #808080;
-                        background-color: rgba(0, 0, 0, 0.5);
-                        height: 130px;
-                        width: 210px;
-                        padding: 7px;
-                        overflow: auto;
-                        vertical-align: middle;
+                        #how-to-play-wrapper {
+                            margin: 0 auto;
+                            border: 1px solid green;
+                            width: 80%;
+
+                            table {
+                                border: 1px solid red;
+                                width: 100%;
+                                width: 400px;
+                                margin: 0 auto;
+
+                                th {
+                                    text-align: center;
+                                    border: 1px solid red;
+                                }
+
+                                td {
+                                    border: 1px solid red;
+                                    width: 49.5%;
+                                    margin: 0 auto;
+                                    text-align: center;
+                                }
+                            }
+                        }
+
+                        #authors-wrapper {
+                            width: 800px;
+                            margin: 65px auto;
+                            height: 70%;
+                            overflow: auto;
+
+                            .col {
+                                display: inline-block;
+                                margin: auto;
+
+                                &:first-of-type {
+                                    float: left;
+                                }
+
+                                &:last-of-type {
+                                    float: right;
+                                }
+                            }
+
+                            .dt {
+                                display: inline-block;
+                                text-align: center;
+                                border: 2px outset #808080;
+                                background-color: rgba(0, 0, 0, 0.5);
+                                padding: 4px 15px;
+                                padding-top: 10px;
+                                width: 120px;
+                                height: 130px;
+                                margin-bottom: 5px;
+
+                                span {
+                                    display: block;
+                                    margin-top: 5px;
+                                }
+                            }
+
+                            .dd {
+                                display: table-cell;
+                                float: right;
+                                border: 2px outset #808080;
+                                background-color: rgba(0, 0, 0, 0.5);
+                                height: 130px;
+                                width: 210px;
+                                padding: 7px;
+                                overflow: auto;
+                                vertical-align: middle;
+                            }
+                        }
                     }
                 }
             }
