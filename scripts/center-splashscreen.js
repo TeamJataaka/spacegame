@@ -2,8 +2,8 @@
 
     var win = $(window);
     var scWrapper = $('#start-screen-wrapper');
-    var wrapperWidth = scWrapper.width();
-    var wrapperHeight = scWrapper.height();
+    var wrapperWidth = scWrapper.outerWidth();
+    var wrapperHeight = scWrapper.outerHeight();
 
     function centerStartScreen() {
         var winWidth = win.width();

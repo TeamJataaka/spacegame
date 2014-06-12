@@ -3,17 +3,22 @@
     var presents = $('#presents');
     var title = presents.next();
     var small = title.next();
-    var win = $(window);
+    //var win = $(window);
     var menuWrapper = $('#menu-wrapper');
     var controlsWrapper = $('#controls-wrapper');
-    var menuSound = new Audio('sounds/menu-sound.mp3');
+    var menuSound = new Audio('sounds/menu-sound.wav');
     menuSound.loop = true;
     var muteButt;
+    var soundOnSrc = 'imgs/soundOn.png';
+    var soundOffSrc = 'imgs/soundOff.png';
+    //var controlsTable = $('table');
 
     // comment this out, uncoment whats below
     //menuWrapper.fadeIn(500);
     //centerMenuWrapper();
+    //centerControlsTable();
     //win.resize(centerMenuWrapper);
+    //win.resize(centerControlsTable);
 
     presents.css('display', 'block').hide();
     title.css('display', 'block').hide();
@@ -32,11 +37,15 @@
 
         doc.on('click', function () {
             menuSound.play();
+            title.attr('src', 'imgs/gos-blk-100-2-fix.png');
             small.fadeOut(1000);
 
             doc.off('click');
             win.off('resize');
+            centerControlsTable();
+            win.resize(centerControlsTable);
 
+            title.fadeOut(2000);
             setTimeout(initializeMenu, 1000);
             createMuteButton();
         });
@@ -51,13 +60,15 @@
     }
 
     function initializeMenu() {
-        title.fadeOut(2000);
         centerMenuWrapper();
         win.resize(centerMenuWrapper);
         menuWrapper.fadeIn(6500);
     }
 
     function createMuteButton() {
+        if (muteButt !== undefined) {
+            return;
+        }
         muteButt = $('<img id="soundToggle" src="imgs/soundOff.png" />');
         muteButt.on('click', toggleMute);
         controlsWrapper.append(muteButt);
@@ -65,8 +76,6 @@
 
     function toggleMute() {
         menuSound.muted = !menuSound.muted;
-        var soundOnSrc = 'imgs/soundOn.png';
-        var soundOffSrc = 'imgs/soundOff.png';
         var currSrc = muteButt.attr('src');
 
         if (currSrc === soundOnSrc) {
