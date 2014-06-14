@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Start screen</title>
+    <link href="styles/style.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="start-screen-wrapper">
+        <img id="presents" src="imgs/jataaka-presents-blue-blend.png" alt="Jataaka Presents" />
+        <img id="title" src="imgs/gos-blu-100-blend.png" alt="Game title" />
+        <small>Click to continue</small>
+    </div>
+    <span id="dummy"></span>
+
+    <div id="menu-wrapper">
+        <img id="bckgrnd" src="imgs/earth-from-space.png" alt="Planet Earth background picture" />
+
+        <div id="controls-wrapper">
+            <ul>
+                <li>
+                    <span id="play-button" class="menu-button">PLAY</span>
+                </li>
+                <li>
+                    <span class="menu-button" data-cntrls="true" data-id="0">How to play</span>
+                </li>
+                <li>
+                    <span class="menu-button" data-authors="true" data-id="1">Authors</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="li-item-content" data-id="0">
+            <div id="how-to-play-wrapper">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th colspan="2">Game Controls</th>
+                        </tr>
+                        <tr>
+                            <td>Move forward</td>
+                            <td>W or Mouse Button 1</td>
+                        </tr>
+                        <tr>
+                            <td>Move backward</td>
+                            <td>S or Mouse Button 2</td>
+                        </tr>
+                        <tr>
+                            <td>Move left</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>Move right</td>
+                            <td>D</td>
+                        </tr>
+                        <tr>
+                            <td>Move up</td>
+                            <td>R</td>
+                        </tr>
+                        <tr>
+                            <td>Move down</td>
+                            <td>F</td>
+                        </tr>
+                        <tr>
+                            <td>Roll left</td>
+                            <td>Q</td>
+                        </tr>
+                        <tr>
+                            <td>Roll right</td>
+                            <td>E</td>
+                        </tr>
+                        <tr>
+                            <td>Look around</td>
+                            <td>Mouse or arrow keys</td>
+                        </tr>
+                        <tr>
+                            <td>Fire</td>
+                            <td>Spacebar</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="li-item-content" data-id="1">
+            <div id="authors-wrapper">
+                <div class="col">
+                    <div class="dt">
+                        <img width="100" height="100" src="imgs/authors/georgi-prodanov.jpg" alt="Georgi Prodanov" />
+                        <span>Georgi Prodanov</span>
+                    </div>
+                    <div class="dd">
+                        Interface, menus and menu animation.
+                    </div>
+                    <br />
+
+                    <div class="dt">
+                        <img width="100" height="100" src="imgs/authors/georgis-andonis.jpg" alt="Georgis Andonis" />
+                        <span>Georgis Andonis</span>
+                    </div>
+                    <div class="dd">
+                        Lorem ipsum dolor mit amet
+                    </div>
+                    <br />
+
+                    <div class="dt">
+                        <img width="100" height="100" src="imgs/authors/konstantin-severi.jpg" alt="Konstantin Severi" />
+                        <span>Konstantin Severi</span>
+                    </div>
+                    <div class="dd">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="dt">
+                        <img width="100" height="100" src="imgs/authors/plamen-georgiev.jpg" alt="Plamen Georgiev" />
+                        <span>Plamen Georgiev</span>
+                    </div>
+                    <div class="dd">
+                        Lorem ipsum dolor mit amet
+                    </div>
+                    <br />
+
+                    <div class="dt">
+                        <img width="100" height="100" src="imgs/authors/plamen-stanev.jpg" alt="Plamen Stanev" />
+                        <span>Plamen Stanev</span>
+                    </div>
+                    <div class="dd">
+                        <p>Three.js space envinroment modeling. </p>
+                        <p>WebGL objects visualizing. </p>
+                    </div>
+                    <br />
+
+                    <div class="dt">
+                        <img width="100" height="100" src="imgs/authors/svetoslav-georgiev.jpg" alt="Svetoslav Georgiev" />
+                        <span>Svetoslav Georgiev</span>
+                    </div>
+                    <div class="dd">
+                        Lorem ipsum dolor mit amet
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+    <script src="scripts/global-functions.js"></script>
+    <script src="scripts/center-splashscreen.js"></script>
+    <script src="scripts/animate-splashcreen.js"></script>
+    <script src="scripts/animate-button-contents.js"></script>
+</body>
+</html>

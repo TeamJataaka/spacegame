@@ -4,7 +4,7 @@
     var allContentItems = $('div.li-item-content');
 
     $('#play-button').off('click').on('click', function () {
-        window.open('SpaceGame/index.html');
+        window.open('../SpaceGame/index.html');
         window.close();
     });
 
