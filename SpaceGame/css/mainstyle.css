@@ -23,7 +23,7 @@
     height: 100%;
 }
 
-#pause-screen {
+#pause-screen, #death-screen {
     display: none;
     position: fixed;
     height: 100%;
@@ -43,7 +43,7 @@
         border-radius: 4px;
     }
 
-    #pause-screen #title {
+    .title {
         border: 3px outset #aaa;
         margin: 10px auto;
         margin-top: 50px;
@@ -51,7 +51,7 @@
         color: #0ff;
     }
 
-    #pause-screen #content {
+    .content {
         border: 2px ridge #aaa;
         margin: 5px auto;
         width: 60%;

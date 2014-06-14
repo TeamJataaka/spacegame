@@ -1,9 +1,9 @@
-//(function () {
+﻿//(function () {
 
-var requestedId;
 // initializing the main structures and objects when the document is loaded
 window.onload = function () {
 
+    var requestedId;
 
     if (!Detector.webgl) Detector.addGetWebGLMessage();
 
@@ -517,14 +517,7 @@ function checkForShipCollisions() {
                     //alert('boom');
                     ARMOR -= 10;
                     playSound(explodeSound, 0.75);
-                    if (ARMOR <= 0) { 
-                        ARMOR = 0;
-                        AMMO = 0;
-                        var message = '  Game Over!' 
-                                    + '\nYour Score: ' + POINTS 
-                                    + '\nKilled Targets: ' + killed;
-                        alert(message);
-                    }
+                    if (ARMOR <= 0) { alert('game over'); }
                     writeScore();
                 }
             }
@@ -685,7 +678,6 @@ function callFire() {
         initMissile();
         AMMO--;
         writeScore();
-       // blasterSound = new Audio(randomBlasterSound());
 
         if (INTERSECTED && INTERSECTED.id) {
 
@@ -861,58 +853,6 @@ function createDynamicTargets() {
     }
 
     globalCx = cx; globalCy = cy; globalCz = cz;
-
-    createDynamicShips();
-}
-
-var newShipCounter = 4;
-function createDynamicShips() {
-    //////////////////////////////////////////////////////////////////////////////////
-    //		the ships							//
-    //////////////////////////////////////////////////////////////////////////////////
-    var geometry = new THREE.CubeGeometry(5000, 600, 400);
-
-    // first ship
-    var ids1_mask;
-
-    if (newShipCounter <= 9) { ids1_mask = 'ship_z_0' + newShipCounter + '_mask'; }
-    else { ids1_mask = 'ship_z_' + newShipCounter + '_mask'; }
-
-    var ids1_mask = 'ship_z_0' + newShipCounter + '_mask';
-    specialTargets[ids1_mask] = true;
-    var object = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: 0x000000 }));
-
-    object.position.x = 1000 * newShipCounter;
-    object.position.y = 100 * newShipCounter;
-    object.position.z = -1800;
-    object.rotation.x = ninetyDegAngle;
-    object.id = ids1_mask;
-    //  indicates that the element is real target
-    visualTargetIds[ids1_mask] = true;
-    targetScreenObjects[ids1_mask] = object;
-
-    movingShips[ids1_mask] = object;
-    scene.add(object);
-
-    var ids1;;
-    if (newShipCounter <= 9) { ids1 = 'ship_z_0' + newShipCounter; }
-    else { ids1 = 'ship_z_' + newShipCounter; }
-
-    THREEx.SpaceShips.loadSpaceFighter01(function (object3d) {
-        object3d.position.x = 1000 * newShipCounter;
-        object3d.position.y = 100 * newShipCounter;
-        object3d.scale.set(10, 10, 10);
-
-        object3d.id = ids1;
-        movingShips[ids1] = object3d;
-
-        //visualTargetIds[ids1] = true;
-        //targetScreenObjects[ids1] = object3d;
-
-        scene.add(object3d);
-    });
-
-    newShipCounter++;
 }
 
 function dynamicCreateTargetsInit() {

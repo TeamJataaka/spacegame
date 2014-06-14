@@ -1,63 +1,63 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Team "Jataaka" Game project</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <link href="css/mainstyle.css" rel="stylesheet" />
+	<head>
+		<title>Team "Jataaka" Game project</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link href="css/mainstyle.css" rel="stylesheet" />
 
-    <script src="js/system/build/three.min.js"></script>
-    <script src="js/gameplay/Ships/OBJLoader.js"></script>
-    <script src="js/gameplay/Ships/MTLLoader.js"></script>
-    <script src="js/gameplay/Ships/OBJMTLLoader.js"></script>
-    <script src="js/gameplay/Ships/threex.spaceships.js"></script>
+		<script src="./js/system/build/three.min.js"></script>
+        <script src="js/gameplay/Ships/OBJLoader.js"></script>
+        <script src="js/gameplay/Ships/MTLLoader.js"></script>
+        <script src="js/gameplay/Ships/OBJMTLLoader.js"></script>
+        <script src="js/gameplay/Ships/threex.spaceships.js"></script>
 
-    <script src="js/system/controls/FlyControls.js"></script>
+        <script src="./js/system/controls/FlyControls.js"></script>
 
-    <script src="js/system/shaders/CopyShader.js"></script>
-    <script src="js/system/shaders/FilmShader.js"></script>
+        <script src="./js/system/shaders/CopyShader.js"></script>
+        <script src="./js/system/shaders/FilmShader.js"></script>
 
-    <script src="js/system/postprocessing/EffectComposer.js"></script>
-    <script src="js/system/postprocessing/ShaderPass.js"></script>
-    <script src="js/system/postprocessing/MaskPass.js"></script>
-    <script src="js/system/postprocessing/RenderPass.js"></script>
-    <script src="js/system/postprocessing/FilmPass.js"></script>
+        <script src="./js/system/postprocessing/EffectComposer.js"></script>
+        <script src="./js/system/postprocessing/ShaderPass.js"></script>
+        <script src="./js/system/postprocessing/MaskPass.js"></script>
+        <script src="./js/system/postprocessing/RenderPass.js"></script>
+        <script src="./js/system/postprocessing/FilmPass.js"></script>
 
-    <script src="js/system/libs/Detector.js"></script>
-    <script src="js/system/libs/stats.min.js"></script>
-    <script src="js/system/libs/jquery-2.0.2.js"></script>
+        <script src="./js/system/libs/Detector.js"></script>
+        <script src="./js/system/libs/stats.min.js"></script>
+        <script src="./js/system/libs/jquery-2.0.2.js"></script>
+    
+	</head>
+	<body>	
+        <img id="cabin" src="textures/planets/cockpit.png" alt="Death Star picture" />
+        <canvas id="the-canvas" ></canvas>
 
-</head>
-<body>
-    <div id="info">
-        <b>WASD</b> move, <b>R|F</b> up | down, <b>Q|E</b> roll, <b>up|down</b> pitch, <b>left|right</b> yaw, <b>spacebar</b> fire<br />
-    </div>
-    <div id="ship-stats">
-        <strong>Ammo: </strong>
-        <br />
-        <br />
-        <strong>Armor: </strong>
-    </div>
-    <img id="cabin" src="textures/planets/cockpit.png" alt="Death Star picture" />
-    <canvas id="the-canvas"></canvas>
-
-    <div id="pause-screen">
-        <div id="title">
-            <h1>Game Paused</h1>
+        <div id="pause-screen">
+            <div class="title">
+                <h1>Game Paused</h1>
+            </div>
+            <div class="content">
+                <section class="button-wrapper">
+                    <span id="resume-game-butt" class="menu-button">Resume Game</span>
+                    <span class="main-menu menu-button">Exit to Main Menu</span>
+                    <span id="exit-game-butt" class="menu-button">Exit Game</span>
+                </section>
+            </div>
         </div>
-        <div id="content">
-            <section class="button-wrapper">
-                <span id="resume-game-butt" class="menu-button">Resume Game</span>
-                <span id="main-menu" class="menu-button">Exit to Main Menu</span>
-                <span id="exit-game-butt" class="menu-button">Exit Game</span>
-            </section>
-        </div>
-    </div>
 
-    <script src="js/gameplay/gameloader.js"></script>
-    <script src="js/gameplay/Classes/snd.js"></script>
-    <script src="js/gameplay/pause-screen-functionality.js"></script>
-    <!--<script src="js/gameplay/Classes/Class.js"></script>
-        <script src="js/gameplay/Classes/Target.js"></script>-->
-</body>
+        <div id="death-screen">
+            <div class="title">
+                <h1>You have died!</h1>
+            </div>
+            <div class="content">
+                <section class="button-wrapper">
+                    <span class="main-menu menu-button">Exit to Main Menu</span>
+                </section>
+            </div>
+        </div>
+
+        <script src="./js/gameplay/gameloader.js"></script>		
+        <script src="./js/gameplay/Classes/snd.js"></script>
+        <script src="js/gameplay/pause-screen-functionality.js"></script>
+	</body>
 </html>
