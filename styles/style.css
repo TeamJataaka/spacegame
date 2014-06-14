@@ -14,12 +14,13 @@ body {
   background-attachment: fixed;
   color: #ffffff;
   font-family: 'Times New Roman', Times, serif;
-  overflow: hidden;
   cursor: context-menu;
+  height: inherit;
+  width: inherit;
 }
 body #start-screen-wrapper {
   position: absolute;
-  width: 1330px;
+  width: 1000px;
 }
 body #start-screen-wrapper img {
   margin: 0 auto;
@@ -34,9 +35,10 @@ body #start-screen-wrapper small {
 body #menu-wrapper {
   display: none;
   color: #ffffff;
-  padding: 15px;
   background: none;
   position: relative;
+  height: 100%;
+  width: 100%;
 }
 body #menu-wrapper #bckgrnd {
   position: fixed;
@@ -80,16 +82,21 @@ body #menu-wrapper .menu-button:hover {
 body #menu-wrapper #controls-wrapper {
   margin: 0 auto;
   width: 385px;
+  z-index: 10;
+  position: relative;
 }
 body #menu-wrapper #controls-wrapper #soundToggle {
   width: 25px;
   height: 25px;
   float: right;
-  margin-top: 2px;
+  margin-top: -27px;
+  margin-right: -12px;
 }
 body #menu-wrapper #controls-wrapper ul {
   list-style-type: none;
   display: inline-block;
+  margin-top: 15px;
+  margin-left: 22px;
 }
 body #menu-wrapper #controls-wrapper ul li {
   display: inline-block;
@@ -106,29 +113,21 @@ body #menu-wrapper #controls-wrapper ul li:hover > .menu-button {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@col1', endColorstr='@col1', GradientType=0);
   color: #0ff;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content {
-  display: none;
+body #menu-wrapper .li-item-content {
   background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 50px;
+  display: none;
+  position: fixed;
+  top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  padding: 25px 0;
+  z-index: 0;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content img {
-  width: 100px;
-  height: 100px;
-  display: block;
-  margin: auto;
-  border-radius: 20%;
-  border: 2px outset #888;
-}
-body #menu-wrapper #controls-wrapper ul li .li-item-content #how-to-play-wrapper {
+body #menu-wrapper .li-item-content #how-to-play-wrapper {
   margin: 0 auto;
   width: 80%;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content #how-to-play-wrapper table {
+body #menu-wrapper .li-item-content #how-to-play-wrapper table {
   border: 2px outset #808080;
   border-width: 4px;
   width: 100%;
@@ -138,40 +137,47 @@ body #menu-wrapper #controls-wrapper ul li .li-item-content #how-to-play-wrapper
   color: #007aef;
   position: absolute;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content #how-to-play-wrapper table tr:first-of-type {
+body #menu-wrapper .li-item-content #how-to-play-wrapper table tr:first-of-type {
   outline: 2px outset #aaa;
   margin-bottom: 5px;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content #how-to-play-wrapper table tr:nth-of-type(2) td {
+body #menu-wrapper .li-item-content #how-to-play-wrapper table tr:nth-of-type(2) td {
   padding-top: 8px;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content #how-to-play-wrapper table th {
+body #menu-wrapper .li-item-content #how-to-play-wrapper table th {
   text-align: center;
   color: #b3ded8;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content #how-to-play-wrapper table td {
+body #menu-wrapper .li-item-content #how-to-play-wrapper table td {
   width: 49.5%;
   margin: 0 auto;
   text-align: center;
   border-collapse: collapse;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper {
+body #menu-wrapper .li-item-content #authors-wrapper {
   width: 800px;
-  margin: 65px auto;
-  height: 70%;
-  overflow: auto;
+  position: absolute;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper .col {
-  display: inline-block;
+body #menu-wrapper .li-item-content #authors-wrapper img {
+  width: 100px;
+  height: 100px;
+  display: block;
   margin: auto;
+  border-radius: 20%;
+  border: 2px outset #888;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper .col:first-of-type {
+body #menu-wrapper .li-item-content #authors-wrapper .col {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+body #menu-wrapper .li-item-content #authors-wrapper .col:first-of-type {
   float: left;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper .col:last-of-type {
+body #menu-wrapper .li-item-content #authors-wrapper .col:last-of-type {
   float: right;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper .dt {
+body #menu-wrapper .li-item-content #authors-wrapper .dt {
   display: inline-block;
   text-align: center;
   border: 2px outset #808080;
@@ -182,11 +188,11 @@ body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper .dt
   height: 130px;
   margin-bottom: 5px;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper .dt span {
+body #menu-wrapper .li-item-content #authors-wrapper .dt span {
   display: block;
   margin-top: 5px;
 }
-body #menu-wrapper #controls-wrapper ul li .li-item-content #authors-wrapper .dd {
+body #menu-wrapper .li-item-content #authors-wrapper .dd {
   display: table-cell;
   float: right;
   border: 2px outset #808080;

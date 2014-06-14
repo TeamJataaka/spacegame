@@ -35,12 +35,13 @@ body {
     .diag-gradient(#000, #fff, 86%, 100%);
     color: @default-font-col;
     font-family: @default-font-family;
-    overflow: hidden;
     cursor: context-menu;
+    height: inherit;
+    width:  inherit;
 
     #start-screen-wrapper {
         position: absolute;
-        width: 1330px;
+        width: 1000px;
 
         img {
             margin: 0 auto;
@@ -58,9 +59,10 @@ body {
     #menu-wrapper {
         display: none;
         color: @default-font-col;
-        padding: 15px;
         background: none;
         position: relative;
+        height: 100%;
+        width: 100%;
 
         #bckgrnd {
             position: fixed;
@@ -93,17 +95,22 @@ body {
         #controls-wrapper {
             margin: 0 auto;
             width: 385px;
+            z-index: 10;
+            position: relative;
 
             #soundToggle {
                 width: 25px;
                 height: 25px;
                 float: right;
-                margin-top: 2px;
+                margin-top: -27px;
+                margin-right: -12px;
             }
 
             ul {
                 list-style-type: none;
                 display: inline-block;
+                margin-top: 15px;
+                margin-left: 22px;
 
                 li {
                     display: inline-block;
@@ -113,116 +120,115 @@ body {
                         .horizontal-doublecolor-gradient(#fff, #000, 30%, 70%);
                         color: #0ff;
                     }
+                }
+            }
+        }
 
-                    .li-item-content {
-                        display: none;
-                        background-color: rgba(0, 0, 0, 0.5);
-                        position: absolute;
-                        top: 50px;
-                        left: 0;
-                        height: 100%;
-                        width: 100%;
-                        padding: 25px 0;
+        .li-item-content {
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
 
-                        img {
-                            width: 100px;
-                            height: 100px;
-                            display: block;
-                            margin: auto;
-                            border-radius: 20%;
-                            border: 2px outset #888;
+            #how-to-play-wrapper {
+                margin: 0 auto;
+                width: 80%;
+
+                table {
+                    border: @default-box-border;
+                    border-width: 4px;
+                    width: 100%;
+                    width: 450px;
+                    padding: 10px 20px;
+                    background-color: rgba(0, 0, 0, 0.6);
+                    color: #007aef;
+                    position: absolute;
+
+                    tr {
+                        &:first-of-type {
+                            outline: 2px outset #aaa;
+                            margin-bottom: 5px;
                         }
 
-                        #how-to-play-wrapper {
-                            margin: 0 auto;
-                            width: 80%;
-
-                            table {
-                                border: @default-box-border;
-                                border-width: 4px;
-                                width: 100%;
-                                width: 450px;
-                                padding: 10px 20px;
-                                background-color: rgba(0, 0, 0, 0.6);
-                                color: #007aef;
-                                position: absolute;
-
-                                tr {
-                                    &:first-of-type {
-                                        outline: 2px outset #aaa;
-                                        margin-bottom: 5px;
-                                    }
-
-                                    &:nth-of-type(2) {
-                                        td {
-                                            padding-top: 8px;
-                                        }
-                                    }
-                                }
-
-                                th {
-                                    text-align: center;
-                                    color: #b3ded8;
-                                }
-
-                                td {
-                                    width: 49.5%;
-                                    margin: 0 auto;
-                                    text-align: center;
-                                    border-collapse: collapse;
-                                }
-                            }
-                        }
-
-                        #authors-wrapper {
-                            width: 800px;
-                            margin: 65px auto;
-                            height: 70%;
-                            overflow: auto;
-
-                            .col {
-                                display: inline-block;
-                                margin: auto;
-
-                                &:first-of-type {
-                                    float: left;
-                                }
-
-                                &:last-of-type {
-                                    float: right;
-                                }
-                            }
-
-                            .dt {
-                                display: inline-block;
-                                text-align: center;
-                                border: @default-box-border;
-                                background-color: rgba(0, 0, 0, 0.5);
-                                padding: 4px 15px;
-                                padding-top: 10px;
-                                width: 120px;
-                                height: 130px;
-                                margin-bottom: 5px;
-
-                                span {
-                                    display: block;
-                                    margin-top: 5px;
-                                }
-                            }
-
-                            .dd {
-                                display: table-cell;
-                                float: right;
-                                border: @default-box-border;
-                                background-color: rgba(0, 0, 0, 0.5);
-                                height: 130px;
-                                width: 210px;
-                                padding: 7px;
-                                overflow: auto;
-                                vertical-align: middle;
+                        &:nth-of-type(2) {
+                            td {
+                                padding-top: 8px;
                             }
                         }
                     }
+
+                    th {
+                        text-align: center;
+                        color: #b3ded8;
+                    }
+
+                    td {
+                        width: 49.5%;
+                        margin: 0 auto;
+                        text-align: center;
+                        border-collapse: collapse;
+                    }
+                }
+            }
+
+            #authors-wrapper {
+                width: 800px;
+                position: absolute;
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                    display: block;
+                    margin: auto;
+                    border-radius: 20%;
+                    border: 2px outset #888;
+                }
+
+                .col {
+                    display: inline-block;
+                    margin: 0 auto;
+                    margin-top: 10px;
+
+                    &:first-of-type {
+                        float: left;
+                    }
+
+                    &:last-of-type {
+                        float: right;
+                    }
+                }
+
+                .dt {
+                    display: inline-block;
+                    text-align: center;
+                    border: @default-box-border;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    padding: 4px 15px;
+                    padding-top: 10px;
+                    width: 120px;
+                    height: 130px;
+                    margin-bottom: 5px;
+
+                    span {
+                        display: block;
+                        margin-top: 5px;
+                    }
+                }
+
+                .dd {
+                    display: table-cell;
+                    float: right;
+                    border: @default-box-border;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    height: 130px;
+                    width: 210px;
+                    padding: 7px;
+                    overflow: auto;
+                    vertical-align: middle;
                 }
             }
         }
